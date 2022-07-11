@@ -1,38 +1,368 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
+
+/* font-family: 'Edu SA Beginner', cursive;
+font-family: 'Oswald', sans-serif; */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --nav: #191A19;
+  --logo: #FEFBE7;
+}
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Edu SA Beginner', cursive;
+  letter-spacing: 1px;
+  background: var(--logo);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header */
+.header__wrapper{
+  height: 11rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+  height: 8rem;
+  background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url("./media/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav__wrapper{
+  background: linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), var(--nav);
+  height: 3rem;
+  color: var(--logo);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+}
+.nav__logo{
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--logo);
+  text-decoration: none;
+}
+.nav__logo h1{
+  font-size: 1.5rem;
+  font-family: 'Oswald', sans-serif; 
+  text-transform: uppercase;
+  margin-left: 0.2rem;
+}
+.nav__search{
+  position: relative;
+  color: var(--nav);
+}
+.nav__search input{
+  width: 17rem;
+  height: 2rem;
+  padding: 0.7rem 1.8rem 0.7rem 0.7rem;
+  border: none;
+  outline: none;
+  border: 2px solid var(--nav);
+  background: var(--logo);
+}
+.nav__search i{
+  position: absolute;
+  right: 4%;
+  top: 22%;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer__wrapper{
+  text-align: center;
+  padding: 4rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--nav);
+  font-family: 'Oswald', sans-serif; 
+}
+.footer__icons{
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.footer__icons:hover{
+  color: red;
+}
+.footer__wrapper a{
+  text-decoration: none;
+  color: var(--nav);
+}
+.footer__rights{
+  padding: 0.6rem;
+  letter-spacing: 2px;
+}
+.footer__rights span{
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 1.2rem;
+}
+
+/* Hero */
+.hero__wrapper{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin: 5rem 10rem;
+  height: 50rem;
+}
+.hero__head{
+  background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("./media/comics.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  color: var(--logo);
+  height: 30rem;
+  padding: 3.5rem;
+  margin-bottom: 1rem;
+}
+.hero__head-content{
+  background-image: url("./media/marvel-comics.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  height: 20rem;
+  margin-top: 1rem;
+}
+.hero__card-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.hero__card{
+  display: flex;
+  position: relative;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 14rem;
+  height: 100%;
+  border: 2px solid var(--nav);
+}
+.hero__card img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  object-fit: cover;
+  cursor: pointer;
+}
+.hero__card-name{
+  z-index: 2;
+  background: var(--logo);
+  height: 2.5rem;
+  width: 90%;
+  padding: 0.5rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  border: 2px solid var(--nav);
+}
+.hero__card h1{
+  text-transform: uppercase;
+  font-size: 1.1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hero Info */
+.heroinfo__wrapper{
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  padding: 2rem;
+  width: 94vw;
+}
+.heroinfo__heading{
+  display: flex;
+  height: 20rem;
+}
+.heroinfo__img-primary{
+  height: 20rem;
+  width: 80%;
+  margin-right: 1rem;
+  border: 2px solid var(--nav);
+}
+.heroinfo__img-primary img{
+  height: 100%;
+  width: 100%;
+}
+.heroinfo__info{
+  border: 2px solid var(--nav);
+  padding: 2rem;
+}
+.heroinfo__info h1{
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.heroinfo__info p{
+  font-size: 1.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media screen and (min-width: 320px) and (max-width: 1024px){
+  /* Header */
+  .header__wrapper{
+    height: 7rem;
   }
-  to {
-    transform: rotate(360deg);
+  .header{
+    height: 5rem;
+  }
+  .nav__wrapper{
+    padding: 0 0.7rem;
+    height: 2rem;
+  }
+  .nav__search input{
+    width: 8rem;
+    height: 1.3rem;
+    padding: 0.2rem 1.2rem 0.2rem 0.2rem;
+  }
+  .nav__search i{
+    font-size: 0.8rem;
+  }
+  .nav__logo{
+    font-size: 0.8rem;
+  }
+  .nav__logo h1{
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer__wrapper{
+    padding: 1rem 0;
+    font-size: 0.6rem;
+  }
+  .footer__icons{
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+  .footer__rights{
+    padding: 0.2rem;
+  }
+  .footer__rights span{
+    font-size: 0.8rem;
+  }
+  
+  /* Hero */
+  .hero__wrapper{
+    margin: 3rem 0 2rem 0;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__head{
+    margin-bottom: -0.5rem;
+  }
+  .hero__head, .hero__card-wrapper{
+    height: 20rem;
+    width: 20rem;
+  }
+  .hero__head-content{
+    height: 10rem;
+    margin-top: -1rem;
+  }
+  .hero__card{
+    width: 4.5rem;
+    height: 7rem;
+  }
+  .hero__card img{
+    height: 100%;
+    width: 100%;
+  }
+  .hero__card-name{
+    height: 1.5rem;
+    padding: 0.3rem;
+  }
+  .hero__card h1{
+    font-size: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 280px){
+  /* Header */
+  .nav__search input{
+    width: 6rem;
+    height: 1.3rem;
+    padding: 0.2rem 1.2rem 0.2rem 0.2rem;
+  }
+  .header__wrapper{
+    height: 6.3rem;
+  }
+  .header{
+    height: 5rem;
+  }
+  .nav__wrapper{
+    padding: 0 0.7rem;
+    height: 2rem;
+  }
+  .nav__search input{
+    width: 8rem;
+    height: 1.3rem;
+    padding: 0.2rem 1.2rem 0.2rem 0.2rem;
+  }
+  .nav__search i{
+    font-size: 0.8rem;
+  }
+  .nav__logo{
+    font-size: 0.8rem;
+  }
+  .nav__logo h1{
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer__wrapper{
+    padding: 0.5rem 0;
+    font-size: 0.6rem;
+  }
+  .footer__icons{
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+  .footer__rights{
+    padding: 0.2rem;
+  }
+  .footer__rights span{
+    font-size: 0.8rem;
+  }
+  
+  /* Hero */
+  .hero__wrapper{
+    margin: 1rem 0 0 0;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__head{
+    margin-bottom: -2rem;
+  }
+  .hero__head, .hero__card-wrapper{
+    height: 14rem;
+    width: 14rem;
+  }
+  .hero__head-content{
+    height: 10rem;
+    margin-top: -1rem;
+  }
+  .hero__card{
+    width: 3.3rem;
+    height: 4.3rem;
+  }
+  .hero__card-name{
+    height: 1rem;
+    padding: 0.1rem;
+  }
+  .hero__card h1{
+    font-size: 0.3rem;
   }
 }
